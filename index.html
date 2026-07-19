@@ -325,101 +325,34 @@
       transform: translateY(-2px);
     }
 
-    .book-placeholder {
-      min-height: 480px;
+    .book-cover {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
 
-      display: grid;
-      place-items: center;
+    .book-cover img {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
 
-      padding: 40px;
-
-      overflow: hidden;
-      position: relative;
-
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      border-radius: 18px;
-
-      color: #ffffff;
-
-      text-align: center;
-
-      background:
-        radial-gradient(
-          circle at 20% 15%,
-          rgba(196, 222, 241, 0.35),
-          transparent 27%
-        ),
-        linear-gradient(
-          145deg,
-          #608caf 0%,
-          #3f698d 50%,
-          #244662 100%
-        );
+      border-radius: 12px;
 
       box-shadow:
-        0 25px 60px rgba(42, 74, 101, 0.22);
+        0 28px 60px rgba(42, 74, 101, 0.24),
+        0 8px 18px rgba(42, 74, 101, 0.14);
+
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
     }
 
-    .book-placeholder::before {
-      content: "";
-
-      position: absolute;
-      top: -90px;
-      right: -90px;
-
-      width: 230px;
-      height: 230px;
-
-      border: 1px solid rgba(255, 255, 255, 0.15);
-      border-radius: 50%;
+    .book-cover img:hover {
+      transform: translateY(-6px);
 
       box-shadow:
-        0 0 0 35px rgba(255, 255, 255, 0.035),
-        0 0 0 70px rgba(255, 255, 255, 0.025);
-    }
-
-    .book-placeholder::after {
-      content: "";
-
-      position: absolute;
-      right: -25%;
-      bottom: 24%;
-      left: -25%;
-
-      height: 1px;
-
-      background: rgba(255, 255, 255, 0.14);
-
-      transform: rotate(-12deg);
-
-      box-shadow:
-        0 38px 0 rgba(255, 255, 255, 0.08),
-        0 76px 0 rgba(255, 255, 255, 0.05);
-    }
-
-    .book-placeholder div {
-      position: relative;
-      z-index: 1;
-    }
-
-    .book-placeholder strong {
-      display: block;
-
-      margin-bottom: 16px;
-
-      color: #ffffff;
-
-      font-size: 2.4rem;
-      line-height: 1.1;
-    }
-
-    .book-placeholder span {
-      color: rgba(255, 255, 255, 0.84);
-
-      font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+        0 36px 72px rgba(42, 74, 101, 0.28),
+        0 12px 22px rgba(42, 74, 101, 0.16);
     }
 
     section {
@@ -675,8 +608,8 @@
         padding: 70px 0;
       }
 
-      .book-placeholder {
-        min-height: 380px;
+      .book-cover img {
+        max-width: 300px;
       }
 
       section {
@@ -731,11 +664,11 @@
           </div>
         </div>
 
-        <div class="book-placeholder">
-          <div>
-            <strong>Theend</strong>
-            <span>One Nation, Divided</span>
-          </div>
+        <div class="book-cover">
+          <img
+            src="images/Theend One Nation Divided Book Cover Lightened.jpg"
+            alt="Cover of Theend: One Nation, Divided by Phetsy"
+          >
         </div>
       </div>
     </section>
