@@ -216,12 +216,11 @@
         );
     }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr 0.75fr;
+    .hero-content {
+      max-width: 820px;
+      margin: 0 auto;
 
-      gap: 70px;
-      align-items: center;
+      text-align: center;
     }
 
     .eyebrow {
@@ -246,8 +245,8 @@
     }
 
     .hero-subtitle {
-      max-width: 700px;
-      margin-bottom: 34px;
+      max-width: 720px;
+      margin: 0 auto 34px;
 
       color: var(--muted);
 
@@ -259,6 +258,45 @@
       flex-wrap: wrap;
 
       gap: 14px;
+    }
+
+    .hero .button-row {
+      justify-content: center;
+    }
+
+    .scroll-cue {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      width: 42px;
+      height: 42px;
+      margin-top: 44px;
+
+      border: 1px solid rgba(82, 127, 168, 0.28);
+      border-radius: 50%;
+
+      color: var(--accent);
+      background: rgba(255, 255, 255, 0.58);
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.15rem;
+
+      box-shadow: var(--shadow-light);
+
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+    }
+
+    .scroll-cue:hover {
+      color: #ffffff;
+      background: var(--accent);
+      border-color: var(--accent);
+
+      transform: translateY(3px);
     }
 
     .button {
@@ -325,13 +363,14 @@
       transform: translateY(-2px);
     }
 
-    .book-cover {
+
+    .book-cover-card {
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .book-cover img {
+    .book-cover-card img {
       width: 100%;
       max-width: 340px;
       height: auto;
@@ -347,7 +386,7 @@
         box-shadow 0.3s ease;
     }
 
-    .book-cover img:hover {
+    .book-cover-card img:hover {
       transform: translateY(-6px);
 
       box-shadow:
@@ -398,35 +437,6 @@
       align-items: center;
     }
 
-    .book-card {
-      padding: 48px 34px;
-
-      border: 1px solid var(--border);
-      border-radius: 18px;
-
-      text-align: center;
-
-      background:
-        linear-gradient(
-          145deg,
-          #ffffff,
-          var(--surface-light)
-        );
-
-      box-shadow: var(--shadow);
-    }
-
-    .book-card h3 {
-      margin-bottom: 10px;
-
-      color: var(--heading);
-
-      font-size: 2rem;
-    }
-
-    .book-card p {
-      color: var(--muted);
-    }
 
     .book-info h2 {
       margin-bottom: 10px;
@@ -438,12 +448,24 @@
     }
 
     .book-subtitle {
-      margin-bottom: 24px;
+      margin-bottom: 10px;
 
       color: var(--accent);
 
       font-size: 1.15rem;
       font-weight: bold;
+    }
+
+    .book-series {
+      margin-bottom: 24px;
+
+      color: var(--muted);
+
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      font-weight: bold;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
     }
 
     .book-description {
@@ -598,7 +620,6 @@
         gap: 16px;
       }
 
-      .hero-grid,
       .book-grid,
       .about-grid {
         grid-template-columns: 1fr;
@@ -608,7 +629,11 @@
         padding: 70px 0;
       }
 
-      .book-cover img {
+      .hero-content {
+        max-width: 680px;
+      }
+
+      .book-cover-card img {
         max-width: 300px;
       }
 
@@ -637,47 +662,48 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Author</p>
+      <div class="container hero-content">
+        <p class="eyebrow">Author</p>
 
-          <h1>Phetsy</h1>
+        <h1>Phetsy</h1>
 
-          <p class="hero-subtitle">
-            Writes stories that explore the choices that divide us, the convictions that
-            define us, and the consequences that follow.
-          </p>
+        <p class="hero-subtitle">
+          Writes stories that explore the choices that divide us, the convictions that
+          define us, and the consequences that follow.
+        </p>
 
-          <div class="button-row">
-            <a
-              class="button button-primary"
-              href="https://books2read.com/phetsy"
-              target="_blank"
-              rel="noopener"
-            >
-              Buy Theend
-            </a>
-
-            <a class="button button-secondary" href="#about">
-              About the Author
-            </a>
-          </div>
-        </div>
-
-        <div class="book-cover">
-          <img
-            src="images/Theend One Nation Divided Book Cover Lightened.jpg"
-            alt="Cover of Theend: One Nation, Divided by Phetsy"
+        <div class="button-row">
+          <a
+            class="button button-primary"
+            href="https://books2read.com/phetsy"
+            target="_blank"
+            rel="noopener"
           >
+            Read Theend
+          </a>
+
+          <a class="button button-secondary" href="#books">
+            Explore Books
+          </a>
         </div>
+
+        <a
+          class="scroll-cue"
+          href="#books"
+          aria-label="Scroll to the books section"
+        >
+          ↓
+        </a>
       </div>
     </section>
 
     <section class="featured-book" id="books">
       <div class="container book-grid">
-        <div class="book-card">
-          <h3>Theend</h3>
-          <p>One Nation, Divided</p>
+        <div class="book-cover-card">
+          <img
+            src="images/Theend One Nation Divided Book Cover Lightened.jpg"
+            alt="Cover of Theend: One Nation, Divided by Phetsy"
+          >
         </div>
 
         <div class="book-info">
@@ -686,6 +712,8 @@
           <h2>Theend</h2>
 
           <p class="book-subtitle">One Nation, Divided</p>
+
+          <p class="book-series">Book One of the THEEND Trilogy</p>
 
           <p class="book-description">
             In a nation pulled apart by competing visions of its future,
